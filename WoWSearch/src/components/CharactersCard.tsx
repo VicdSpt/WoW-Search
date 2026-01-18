@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardActions from '@mui/material/CardActions';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 interface Character {
     id: number;
@@ -19,7 +20,7 @@ interface CharacterCardProps{
     character: Character;
 }
 
-export default function MultiActionAreaCard({character}: CharacterCardProps) {
+export default function ShowCharactersCard({character}: CharacterCardProps) {
   return (
     <Card className='my-5 '>
       <CardActionArea>
@@ -36,7 +37,7 @@ export default function MultiActionAreaCard({character}: CharacterCardProps) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button>Add to Favorite</Button>
+        <Button>Add to Favorite <FavoriteIcon /></Button>
       </CardActions>
     </Card>
   );

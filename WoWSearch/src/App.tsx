@@ -5,6 +5,7 @@ import { Container, Box } from "@mui/material";
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
 import CharactersCard from "./components/CharactersCard";
+import Footer from "./components/Footer"
 
 interface Character {
   id: number;
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <>
-      <Container>
+      <Container maxWidth="xl">
         <Box>
           <NavBar />
           <Search />
@@ -37,6 +38,7 @@ function App() {
               <CharactersCard key={character.id} character={character} />
             ))}
           </div>
+          <Footer />
         </Box>
       </Container>
     </>
