@@ -1,11 +1,19 @@
-// import { useState } from 'react'
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Container, Box } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
 import CharactersCard from "./components/CharactersCard";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
+
+// Create custom theme
+const theme = createTheme({
+  typography: {
+    fontFamily: ['Poppins'].join(","),
+  },
+});
 
 interface Character {
   id: number;
@@ -25,23 +33,34 @@ function App() {
       .then((response) => response.json())
       .then((data) => setCharacters(data))
       .catch((error) => console.error("Error Loading yours Characters", error));
-  });
+  }, []);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Container maxWidth="xl">
         <Box>
           <NavBar />
           <Search />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "repeat(1, 1fr)",
+                md: "repeat(2, 1fr)",
+                lg: "repeat(3, 1fr)",
+              },
+              gap: 3,
+            }}
+          >
             {characters.map((character) => (
               <CharactersCard key={character.id} character={character} />
             ))}
-          </div>
+          </Box>
           <Footer />
         </Box>
       </Container>
-    </>
+    </ThemeProvider>
   );
 }
 

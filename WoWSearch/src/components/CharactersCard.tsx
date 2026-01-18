@@ -28,6 +28,12 @@ export default function ShowCharactersCard({character}: CharacterCardProps) {
           component="img"
           image={character.image}
           alt={`${character.name} - ${character.race} ${character.class}`}
+          sx={{
+            transition: 'transform 0.3s ease-in-out',
+            '&:hover': {
+              transform: 'scale(1.1)',
+            },
+          }}
         />
         <CardContent>
           <Typography>{character.name}</Typography>

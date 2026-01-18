@@ -5,10 +5,11 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Typography from '@mui/material/Typography';
 
+
 export default function SearchCharacters() {
   return (
     <Box sx={{ p: 4, maxWidth: 600, mx: 'auto' }}>
-      <Typography component="h1" gutterBottom sx={{ fontSize: '2rem' }}>
+      <Typography component="h1" gutterBottom sx={{ fontSize: '3rem', textAlign:"center" }}>
         World of Warcraft Search Characters
       </Typography>
       
