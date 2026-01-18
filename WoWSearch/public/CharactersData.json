@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Molhak",
+    "race": "Orc",
+    "class": "Warrior",
+    "faction": "Horde",
+    "description": "Powerful warrior bashing mobs",
+    "image": "/images/War.jpg",
+    "icon": "/images/Horde.png"
+  },
+  {
+    "id": 2,
+    "name": "Roggfire",
+    "race": "Troll",
+    "class": "Druid",
+    "faction": "Horde",
+    "description": "Powerful Druid bashing mobs",
+    "image": "/images/Druid.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Rogglight",
+    "race": "Blood Elf",
+    "class": "Paladin",
+    "faction": "Horde",
+    "description": "Powerful Paladin bashing mobs",
+    "image": "/images/Paladin.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Roggstab",
+    "race": "Blood Elf",
+    "class": "Rogue",
+    "faction": "Horde",
+    "description": "Powerful Rogue bashing mobs",
+    "image": "/images/Rogue.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Harlock",
+    "race": "Blood Elf",
+    "class": "Demon Hunter",
+    "faction": "Horde",
+    "description": "Powerful Demon Hunter bashing mobs",
+    "image": "/images/DemonHunter.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Roggvir",
+    "race": "Zandalari Troll",
+    "class": "Shaman",
+    "faction": "Horde",
+    "description": "Powerful Shaman bashing mobs",
+    "image": "/images/Shaman.jpg"
+  }
+]
