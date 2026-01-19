@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 // Create custom theme
 const theme = createTheme({
   typography: {
-    fontFamily: ['Poppins'].join(","),
+    fontFamily: ["Poppins"].join(","),
   },
 });
 
@@ -23,6 +23,7 @@ interface Character {
   faction: string;
   description: string;
   image: string;
+  hoverColor?: string
 }
 
 function App() {
@@ -38,9 +39,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <NavBar />
       <Container maxWidth="xl">
         <Box>
-          <NavBar />
           <Search />
           <Box
             sx={{
@@ -51,15 +52,16 @@ function App() {
                 lg: "repeat(3, 1fr)",
               },
               gap: 3,
+              py: 5,
             }}
           >
             {characters.map((character) => (
               <CharactersCard key={character.id} character={character} />
             ))}
           </Box>
-          <Footer />
         </Box>
       </Container>
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -1,47 +1,49 @@
-import * as React from "react";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import FolderIcon from "@mui/icons-material/Folder";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import React from "react";
+import { Box, Container, Typography, IconButton } from '@mui/material';
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-import GitHubIcon from "@mui/icons-material/GitHub";
-
-export default function LabelBottomNavigation() {
-  const [value, setValue] = React.useState("recents");
-
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
-
+export default function Footer() {
   return (
-    <BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange}>
-      <BottomNavigationAction
-        label="Recents"
-        value="recents"
-        icon={<RestoreIcon />}
-      />
-      <BottomNavigationAction
-        label="GitHub"
-        value="github"
-        icon={<GitHubIcon />}
-      />
-      <BottomNavigationAction
-        label="Favorites"
-        value="favorites"
-        icon={<FavoriteIcon />}
-      />
-      <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<LocationOnIcon />}
-      />
-      <BottomNavigationAction
-        label="Folder"
-        value="folder"
-        icon={<FolderIcon />}
-      />
-    </BottomNavigation>
+    <Box
+      component="footer"
+      sx={{
+        backgroundColor: "#6a0001",
+        color: "white",
+        py: 2,
+        mt: "auto",
+      }}
+    >
+      <Container maxWidth={false} disableGutters sx={{ px: 2 }} >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <Typography>
+            © {new Date().getFullYear()} Victor dS - All rights reserved
+          </Typography>
+          <Box>
+            <IconButton component="a" href="https://facebook.com" color="inherit" aria-label="Facebook" target="_blank">
+              <FacebookIcon />
+            </IconButton>
+            <IconButton color="inherit" aria-label="Twitter">
+              <TwitterIcon />
+            </IconButton>
+            <IconButton color="inherit" aria-label="Instagram">
+              <InstagramIcon />
+            </IconButton>
+            <IconButton color="inherit" aria-label="LinkedIn">
+              <LinkedInIcon />
+            </IconButton>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 }

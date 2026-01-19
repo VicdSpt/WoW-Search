@@ -7,7 +7,8 @@
     "faction": "Horde",
     "description": "Powerful warrior bashing mobs",
     "image": "/images/War.jpg",
-    "icon": "/images/Horde.png"
+    "icon": "/images/Horde.png",
+    "hoverColor": "#C69B6D"
   },
   {
     "id": 2,
@@ -16,7 +17,9 @@
     "class": "Druid",
     "faction": "Horde",
     "description": "Powerful Druid bashing mobs",
-    "image": "/images/Druid.jpg"
+    "image": "/images/Druid.jpg",
+    "hoverColor": "#FF7C0A"
+
   },
   {
     "id": 3,
@@ -25,7 +28,9 @@
     "class": "Paladin",
     "faction": "Horde",
     "description": "Powerful Paladin bashing mobs",
-    "image": "/images/Paladin.jpg"
+    "image": "/images/Paladin.jpg",
+    "hoverColor": "#F48CBA"
+
   },
   {
     "id": 4,
@@ -34,7 +39,9 @@
     "class": "Rogue",
     "faction": "Horde",
     "description": "Powerful Rogue bashing mobs",
-    "image": "/images/Rogue.jpg"
+    "image": "/images/Rogue.jpg",
+    "hoverColor": "#FFF468"
+
   },
   {
     "id": 5,
@@ -43,7 +50,9 @@
     "class": "Demon Hunter",
     "faction": "Horde",
     "description": "Powerful Demon Hunter bashing mobs",
-    "image": "/images/DemonHunter.jpg"
+    "image": "/images/DemonHunter.jpg",
+    "hoverColor": "#A330C9"
+
   },
   {
     "id": 6,
@@ -52,6 +61,19 @@
     "class": "Shaman",
     "faction": "Horde",
     "description": "Powerful Shaman bashing mobs",
-    "image": "/images/Shaman.jpg"
+    "image": "/images/Shaman.jpg",
+    "hoverColor": "#0070DD"
+
+  },
+  {
+    "id": 7,
+    "name": "Roggice",
+    "race": "Undead",
+    "class": "Death Knight",
+    "faction": "Horde",
+    "description": "Powerful Death Knight bashing mobs",
+    "image": "/images/DK.jpg",
+    "hoverColor": "#C41E3A"
+
   }
 ]
