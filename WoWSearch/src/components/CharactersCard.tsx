@@ -15,7 +15,7 @@ interface Character {
   faction: string;
   description: string;
   image: string;
-  hoverColor?: string
+  hoverColor?: string;
 }
 interface CharacterCardProps {
   character: Character;
@@ -24,24 +24,21 @@ interface CharacterCardProps {
 export default function ShowCharactersCard({ character }: CharacterCardProps) {
   return (
     <Card>
-      <CardActionArea sx={{
-    '&:hover': {
-      backgroundColor: character.hoverColor, // or any color you want
-    }
-  }}>
+      <CardActionArea
+        sx={{
+            transition: "transform 0.3s ease-in-out",
+            "&:hover": {
+              transform: "scale(1.05)",
+              backgroundColor: character.hoverColor,
+            },
+          }}
+      >
         <CardMedia
           component="img"
           image={character.image}
           alt={`${character.name} - ${character.race} ${character.class}`}
-          sx={{
-            transition: "transform 0.3s ease-in-out",
-            "&:hover": {
-              transform: "scale(1.1)",
-              backgroundColor: character.hoverColor
-            },
-          }}
         />
-        <CardContent>
+        <CardContent >
           <Typography sx={{ fontSize: "1.5rem", fontWeight: "bold" }}>
             {character.name}
           </Typography>
@@ -52,9 +49,9 @@ export default function ShowCharactersCard({ character }: CharacterCardProps) {
           <Typography>{character.description}</Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions sx={{ justifyContent: "space-between" }}>
         <Button>Add to Favorite </Button>
-        <FavoriteIcon sx={{color:'red'}}/>
+        <FavoriteIcon sx={{ color: "red" }} />
       </CardActions>
     </Card>
   );

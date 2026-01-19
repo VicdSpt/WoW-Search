@@ -38,7 +38,7 @@ export default function Footer() {
             <IconButton color="inherit" aria-label="Instagram">
               <InstagramIcon />
             </IconButton>
-            <IconButton color="inherit" aria-label="LinkedIn">
+            <IconButton component="a" href="https://www.linkedin.com/feed/" color="inherit" aria-label="LinkedIn" target="_blank">
               <LinkedInIcon />
             </IconButton>
           </Box>
