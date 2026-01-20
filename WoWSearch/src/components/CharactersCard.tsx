@@ -16,6 +16,7 @@ interface Character {
   description: string;
   image: string;
   hoverColor?: string;
+  website: string
 }
 interface CharacterCardProps {
   character: Character;
@@ -59,11 +60,12 @@ export default function ShowCharactersCard({ character }: CharacterCardProps) {
       >
         <Button>Add to Favorite</Button>
         <Button
-          href="https://raider.io/characters/eu/ysondre/Molhak"
+          component="a"
+          href={character.website}
           target="_blank"
           sx={{
             "&:hover": {
-              backgroundColor: "#bfdbf7"
+              backgroundColor: "#bfdbf7",
             },
           }}
         >

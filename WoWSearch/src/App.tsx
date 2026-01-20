@@ -23,11 +23,13 @@ interface Character {
   faction: string;
   description: string;
   image: string;
-  hoverColor?: string
+  hoverColor?: string;
+  website: string;
 }
 
 function App() {
   const [characters, setCharacters] = useState<Character[]>([]);
+  const [searchCharacters, setSearchCharacters] = useState("");
 
   useEffect(() => {
     fetch("/CharactersData.json")
@@ -36,13 +38,33 @@ function App() {
       .catch((error) => console.error("Error Loading yours Characters", error));
   }, []);
 
+  // Filter characters based on search term
+  const filteredCharacters = characters.filter((character) => {
+    if (searchCharacters === "") {
+      return true; // Show all when no search term
+    }
+
+    const search = searchCharacters.toLowerCase();
+
+    return (
+      character.name.toLowerCase().includes(search) ||
+      character.race.toLowerCase().includes(search) ||
+      character.class.toLowerCase().includes(search) ||
+      character.faction.toLowerCase().includes(search)
+    );
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NavBar />
       <Container maxWidth="xl">
-        <Box>
-          <Search />
+        <Box sx={{display: "flex", flexDirection:"column", minHeight:"100vh"}}>
+          <Search
+            searchCharacters={searchCharacters}
+            setSearchCharacters={setSearchCharacters}
+            resultsCount={filteredCharacters.length}
+          />
           <Box
             sx={{
               display: "grid",
@@ -55,7 +77,7 @@ function App() {
               py: 5,
             }}
           >
-            {characters.map((character) => (
+            {filteredCharacters.map((character) => (
               <CharactersCard key={character.id} character={character} />
             ))}
           </Box>
