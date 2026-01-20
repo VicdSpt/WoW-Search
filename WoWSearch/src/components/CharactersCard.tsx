@@ -26,31 +26,49 @@ export default function ShowCharactersCard({ character }: CharacterCardProps) {
     <Card>
       <CardActionArea
         sx={{
-            transition: "transform 0.3s ease-in-out",
-            "&:hover": {
-              transform: "scale(1.05)",
-              backgroundColor: character.hoverColor,
-            },
-          }}
+          transition: "transform 0.3s ease-in-out",
+          "&:hover": {
+            transform: "scale(1.05)",
+            backgroundColor: character.hoverColor,
+          },
+        }}
       >
         <CardMedia
           component="img"
           image={character.image}
           alt={`${character.name} - ${character.race} ${character.class}`}
         />
-        <CardContent >
+        <CardContent sx={{ px: 4 }}>
           <Typography sx={{ fontSize: "1.5rem", fontWeight: "bold" }}>
             {character.name}
           </Typography>
           <Typography>
+            {" "}
             {character.race} {character.class}
           </Typography>
           <Typography>{character.faction}</Typography>
           <Typography>{character.description}</Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions sx={{ justifyContent: "space-between" }}>
-        <Button>Add to Favorite </Button>
+      <CardActions
+        sx={{
+          justifyContent: "space-between",
+          py: 2,
+          backgroundColor: "#e9ecef",
+        }}
+      >
+        <Button>Add to Favorite</Button>
+        <Button
+          href="https://raider.io/characters/eu/ysondre/Molhak"
+          target="_blank"
+          sx={{
+            "&:hover": {
+              backgroundColor: "#bfdbf7"
+            },
+          }}
+        >
+          More About this character
+        </Button>
         <FavoriteIcon sx={{ color: "red" }} />
       </CardActions>
     </Card>
