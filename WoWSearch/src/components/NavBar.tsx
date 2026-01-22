@@ -13,25 +13,31 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import {useNavigate} from 'react-router-dom'
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = ['Characters', 'About', 'Contact'];
+const navItems = [
+  {label: "Home", path: "/home"},
+  {label: "Favorites", path: "/favorites"},
+  {label: "Contact", path: "/contact"}
+];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const handleNavigationClick = (path: string) => {
+    navigate(path)
+  }
 
   // burger menu
   const drawer = (
@@ -42,9 +48,9 @@ export default function DrawerAppBar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleNavigationClick(item.path)}>
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -77,8 +83,8 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', fontWeight:"bold" }}>
-                {item}
+              <Button key={item.label} sx={{ color: '#fff', fontWeight:"bold" }} onClick ={() => handleNavigationClick(item.path)}>
+                {item.label}
               </Button>
             ))}
           </Box>

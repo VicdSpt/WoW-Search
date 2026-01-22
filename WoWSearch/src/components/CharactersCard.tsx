@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 interface Character {
   id: number;
@@ -20,9 +21,11 @@ interface Character {
 }
 interface CharacterCardProps {
   character: Character;
+  onToggleFavorite?: (character: Character) => void;
+  isFavorite?: boolean;
 }
 
-export default function ShowCharactersCard({ character }: CharacterCardProps) {
+export default function ShowCharactersCard({ character, onToggleFavorite, isFavorite = false}: CharacterCardProps) {
   return (
     <Card>
       <CardActionArea
@@ -58,8 +61,22 @@ export default function ShowCharactersCard({ character }: CharacterCardProps) {
           backgroundColor: "#e9ecef",
         }}
       >
-        <Button>Add to Favorite</Button>
         <Button
+          onClick={() => onToggleFavorite?.(character)}
+          sx={{
+            "&:hover": {
+              backgroundColor: "#bfdbf7",
+            },
+          }}
+        >
+          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+          {isFavorite ? (
+            <FavoriteIcon sx={{ ml: 1, color: "red" }} />
+          ) : (
+            <FavoriteBorderIcon sx={{ ml: 1, color: "red" }} />
+          )}
+        </Button>
+        <Button 
           component="a"
           href={character.website}
           target="_blank"
@@ -71,7 +88,7 @@ export default function ShowCharactersCard({ character }: CharacterCardProps) {
         >
           More About this character
         </Button>
-        <FavoriteIcon sx={{ color: "red" }} />
+        
       </CardActions>
     </Card>
   );

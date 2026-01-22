@@ -9,7 +9,7 @@
     "image": "/images/War.jpg",
     "icon": "/images/Horde.png",
     "hoverColor": "#C69B6D",
-    "website":"https://raider.io/characters/eu/ysondre/Molhak"
+    "website": "https://raider.io/characters/eu/ysondre/Molhak"
   },
   {
     "id": 2,
@@ -19,8 +19,8 @@
     "faction": "Horde",
     "description": "Powerful Druid bashing mobs",
     "image": "/images/Druid.jpg",
-    "hoverColor": "#FF7C0A"
-
+    "hoverColor": "#FF7C0A",
+    "website": "https://raider.io/characters/eu/ysondre/Roggf%C3%ACre"
   },
   {
     "id": 3,
@@ -30,8 +30,8 @@
     "faction": "Horde",
     "description": "Powerful Paladin bashing mobs",
     "image": "/images/Paladin.jpg",
-    "hoverColor": "#F48CBA"
-
+    "hoverColor": "#F48CBA",
+    "website": "https://raider.io/characters/eu/ysondre/Rogglight"
   },
   {
     "id": 4,
@@ -41,8 +41,8 @@
     "faction": "Horde",
     "description": "Powerful Rogue bashing mobs",
     "image": "/images/Rogue.jpg",
-    "hoverColor": "#FFF468"
-
+    "hoverColor": "#FFF468",
+    "website": "https://raider.io/characters/eu/ysondre/Roggstab"
   },
   {
     "id": 5,
@@ -52,8 +52,8 @@
     "faction": "Horde",
     "description": "Powerful Demon Hunter bashing mobs",
     "image": "/images/DemonHunter.jpg",
-    "hoverColor": "#A330C9"
-
+    "hoverColor": "#A330C9",
+    "website": "https://raider.io/characters/eu/ysondre/Harlock"
   },
   {
     "id": 6,
@@ -63,8 +63,8 @@
     "faction": "Horde",
     "description": "Powerful Shaman bashing mobs",
     "image": "/images/Shaman.jpg",
-    "hoverColor": "#0070DD"
-
+    "hoverColor": "#0070DD",
+    "website": "https://raider.io/characters/eu/ysondre/Roggvir"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "faction": "Horde",
     "description": "Powerful Death Knight bashing mobs",
     "image": "/images/DK.jpg",
-    "hoverColor": "#C41E3A"
-
+    "hoverColor": "#C41E3A",
+    "website": "https://raider.io/characters/eu/ysondre/Roggice"
   }
 ]
