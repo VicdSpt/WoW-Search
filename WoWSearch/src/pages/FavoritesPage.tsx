@@ -3,7 +3,7 @@ import SelectionFavorites from '../components/SelectionFavorites';
 
 export default function Favorites() {
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth="xl">
       <Typography 
         variant="h3" 
         component="h1" 
@@ -12,7 +12,7 @@ export default function Favorites() {
       >
         Your Favorite Characters
       </Typography>
-      <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
         <SelectionFavorites />
       </Box>
     </Container>
