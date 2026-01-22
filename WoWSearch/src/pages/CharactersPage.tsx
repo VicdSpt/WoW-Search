@@ -18,6 +18,15 @@ interface Character {
 export default function CharactersPage() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [searchCharacters, setSearchCharacters] = useState("");
+  const [favorites, setFavorites] = useState<Character[]>(() => {
+    try {
+      const savedFavorites = localStorage.getItem("favorites");
+      return savedFavorites ? JSON.parse(savedFavorites) : [];
+    } catch (error) {
+      console.error("Error loading favorites:", error);
+      return [];
+    }
+  });
 
   useEffect(() => {
     fetch("/CharactersData.json")
@@ -25,6 +34,23 @@ export default function CharactersPage() {
       .then((data) => setCharacters(data))
       .catch((error) => console.error("Error Loading yours Characters", error));
   }, []);
+
+  // Toggle favorite status
+  const handleToggleFavorite = (character: Character) => {
+    const isFavorite = favorites.some((fav) => fav.id === character.id);
+    let updatedFavorites;
+
+    if (isFavorite) {
+      // Remove from favorites
+      updatedFavorites = favorites.filter((fav) => fav.id !== character.id);
+    } else {
+      // Add to favorites
+      updatedFavorites = [...favorites, character];
+    }
+
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
   // Filter characters based on search term
   const filteredCharacters = characters.filter((character) => {
@@ -43,7 +69,6 @@ export default function CharactersPage() {
   });
 
   return (
-    
     <Container maxWidth="xl">
       <Box
         sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
@@ -66,7 +91,12 @@ export default function CharactersPage() {
           }}
         >
           {filteredCharacters.map((character) => (
-            <CharactersCard key={character.id} character={character} />
+            <CharactersCard
+              key={character.id}
+              character={character}
+              onToggleFavorite={handleToggleFavorite}
+              isFavorite={favorites.some((fav) => fav.id === character.id)}
+            />
           ))}
         </Box>
       </Box>
